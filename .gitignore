@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+logs/
+data/output/*.npy
+data/output/weights.json
+data/output/performance_report.json
+.idea/
+.vscode/
