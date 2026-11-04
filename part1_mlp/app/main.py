@@ -73,7 +73,7 @@ def make_prediction(network, dataset):
     if dataset._mean is not None:
         values = (np.asarray(values) - dataset._mean) / dataset._std
     output = network.predict(np.asarray(values, dtype=float))
-    print("Выход сети: %s -> класс %d" % (np.round(output, 4), int(output >= 0.5)))
+    print("Выход сети: %s -> класс %d" % (np.round(output, 4), int(output.item() >= 0.5)))
 
 
 def save_or_load(network):
