@@ -8,3 +8,5 @@ data/output/weights.json
 data/output/performance_report.json
 .idea/
 .vscode/
+data/output/
+*.docx
