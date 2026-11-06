@@ -10,3 +10,4 @@ data/output/performance_report.json
 .vscode/
 data/output/
 *.docx
+part2_prepare/data/
