@@ -47,8 +47,8 @@ def command_doctor(arguments, logger):
         if found:
             try:
                 result = subprocess.run(
-                    [tool], capture_output=True, text=True, timeout=10
-                )
+    [tool, "--version"], capture_output=True, text=True, timeout=10
+)
                 summary = (result.stdout or result.stderr).strip().splitlines()[0]
                 print("%s: %s" % (tool, summary))
             except (subprocess.SubprocessError, OSError) as error:
