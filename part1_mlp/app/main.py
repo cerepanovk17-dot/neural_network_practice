@@ -3,7 +3,8 @@
 Запуск из папки part1_mlp:
     python -m app.main
 """
-
+import os
+from pathlib import Path
 import numpy as np
 
 from .exceptions import InputValidationError, NeuralNetworkError
@@ -95,8 +96,13 @@ def show_plot(network):
     if not network.loss_history:
         print("Сначала обучите сеть.")
         return
-    plot_loss(network.loss_history, "loss_history.png")
-    print("График сохранён в loss_history.png")
+    output_path = Path("..", "data", "output", "loss_history.png")
+    plot_loss(network.loss_history, str(output_path))
+    print("График сохранён в %s" % output_path.resolve())
+    try:
+        os.startfile(str(output_path.resolve()))
+    except OSError:
+        print("Не удалось открыть просмотрщик по умолчанию.")
 
 
 def main():
